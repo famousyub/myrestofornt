@@ -1,0 +1,8 @@
+mat-table {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  mat-row, mat-header-row {
+    flex-direction: column;
+  }

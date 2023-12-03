@@ -1,0 +1,126 @@
+
+
+<app-header></app-header>
+<app-product></app-product>
+
+
+
+
+
+<app-section></app-section>
+
+<br/>
+
+<br/>
+<router-outlet></router-outlet>
+
+
+
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">forticas.com <i>CODE WANTS TO BE SIMPLE </i> 
+            
+           </p>
+        
+        <img src="../assets/forticas.jpg"/>
+        </div>
+
+    
+
+     
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+       <a href="#">forticas
+
+        <img src="../assets/forticas.jpg" height="80"  width="80" class="responsive"/>
+       </a>.
+          </p>
+        </div>
+
+        <button (click)="showmaps()" class="btn">
+            location
+        </button>
+
+       
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+<aside>
+
+    <!-- <a href="#" id="show" class="btn">Show Map</a>
+<div id="map" class="map"></div>
+
+<iframe src="http://localhost:9088/map.html" height="100px" width="200px"></iframe>
+ -->
+
+</aside>
+
+
+
+
+
+
+
+
+<script>
+	// Get current position successfully
+function success(position) {
+  var map, marker,
+      latitude = position.coords.latitude,
+      longitude = position.coords.longitude;
+  
+  // Instance map using leaflet
+  map = L.map('map').setView([latitude, longitude], 13);
+  
+  // Tile layer using key api at cloudmade.com
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    key: '760506895e284217a7442ce2efe97797',
+    styleId: 103288,
+    maxZoom: 16
+  }).addTo(map);
+
+  // Marker using leaflet
+  marker = L.marker([latitude, longitude]).addTo(map);
+
+  // Popup in leaflet
+  marker.bindPopup('<p>Your location</p>').openPopup();
+}
+
+// Get current position fail
+function error() {
+  alert('Get current position fail. Please access codepen to get geolocation.');
+}
+
+// Init load document
+var show = document.getElementById('show');
+
+show.addEventListener('click', function(e) {
+  e.preventDefault();
+  if (!navigator.geolocation) {
+    console.log("Browser doesn't support geolocation");
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+}, false);
+</script>
+
+
+

@@ -1,0 +1,809 @@
+html {
+    font-family: sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+    
+  }
+  
+  
+  body {
+  box-shadow: inset 0 0px 10px rgba(0, 0, 0,11.5); 
+  margin-bottom: auto;
+  overflow: auto;
+  margin: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /*   
+    
+     //background-image: url("https://image.freepik.com/free-vector/fish-seamless-background_8365-65.jpg");
+    background-image: url("https://t3.ftcdn.net/jpg/01/07/14/00/360_F_107140090_3eRlMItNMxEcw67BDq0lPAppu5q62QUw.jpg");
+  
+    background-image: url("https://media.istockphoto.com/photos/abstract-red-cement-wall-texture-picture-id520420178?k=20&m=520420178&s=612x612&w=0&h=njt0IQde-e1L-0ooBvUCh1hnlNkXg_RglzQsFAQ8_-M=");
+  
+      background-image: url("https://static.vecteezy.com/system/resources/thumbnails/006/923/419/small/cute-mustache-tacos-logo-mascot-illustrations-for-your-work-logo-mascot-merchandise-t-shirt-stickers-and-label-designs-poster-greeting-cards-advertising-business-company-or-brands-vector.jpg");
+    
+    
+    background-image: url("https://media.istockphoto.com/photos/abstract-red-cement-wall-texture-picture-id520420178?k=20&m=520420178&s=612x612&w=0&h=njt0IQde-e1L-0ooBvUCh1hnlNkXg_RglzQsFAQ8_-M=");
+   
+     background-image: url("https://img.freepik.com/vector-gratis/taco-comida-tradicional-mexicana-ilustracion-aislada_184733-99.jpg?w=360");
+   */
+    background: black;
+  }
+  
+  
+  #headerimg{width: 100px; margin: 0px;}
+  
+  .header-wrapper{display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+    width: 100%; height: cover; margin-bottom: 35px; margin-top: 35px; border-radius: 20px;}
+  
+  
+  /* width */
+  ::-webkit-scrollbar {
+  width: 8px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+  background: black;
+   
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background:white;
+  }
+  
+  
+  
+  
+  .nav {
+    height: 60px;
+    flex: 100%;
+    display: flex;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 0px;
+    color: white;
+    background-color: black;
+    box-shadow: inset 0 0px 10px rgba(0, 0, 0,11.5);
+    z-index: 1;
+  }
+  
+  .nav ul {
+    padding: 0;
+    list-style-type: none;
+    flex: 1;
+    display: flex;
+    font-weight: bold;
+  }
+  
+  .nav li {
+    display: inline;
+    text-align: center;
+    flex: 1;
+    
+  }
+  
+  .nav a, .nav span {
+    display: block;
+    font-size: 100%;
+    height: 3rem;
+    line-height: 1.7;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .nav li:hover {
+   background-color: white;
+   color: black;
+   border-radius: 20px;
+  }
+    .nav a:hover {
+     color: black;
+  }
+  
+  
+  
+  h1 {
+  /*  Menu Title  */
+    color: white;
+    text-align: center;
+    font-size: auto;
+    line-height: 0;
+    padding: 0px;
+    margin: 0px;
+    top: 0;
+    width: 100%;
+    color: black;
+  /*  border: 5px solid black; */
+    border-radius: 30px;
+    font-size: 40px;
+    font-family: Pacifico, Nixie One, serif;
+    color: white;background: black; }
+  
+  
+  
+  /* h2 colors */
+  
+  h2 {
+    text-align: left;
+    font-size: auto;
+    line-height: 0;
+    padding: 10px;
+    margin-top: 10%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;}
+  
+  
+  .appetizers{
+    padding: 10px;
+    border-top-left-radius: 30px;
+     border-top-right-radius: 30px;
+     margin-top: -50px;
+  }
+  
+  .main-course{
+    //background-color: #f991af; 
+    padding: 10px; background: linear-gradient(#f2eecb, #cfb997, #f2eecb);  background: black;
+  }
+  
+  
+  .desserts{
+  background-color: #abdbe3;
+   background: linear-gradient(#f2eecb, #cfb997, #f2eecb); 
+  padding: 10px;
+     border-bottom-left-radius: 30px;
+     border-bottom-right-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; background: black;
+  }
+  
+  mark 
+  {
+  padding: 30px;
+  border-radius: 40px;
+  font-size: 130%;
+  background-color: white;
+  
+    
+  }
+  
+  .center {
+    margin: 0px;
+    width: 100%;
+    height: 15%;
+    padding: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .iframe-wrapper{
+    border-radius: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -40px;
+    overflow: hidden;
+    border: 5px solid black; 
+  }
+  
+  h3{color: white;
+    text-align: center;
+    font-size: auto;
+    background: #f9adc9;
+    color: black;
+    width: 100%;
+    padding: 20px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    background: black;
+    color: white;
+  }
+  
+  
+  section
+  {
+    
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0,11.5);
+  filter: drop-shadow(0 0 1rem black);
+  margin-top: auto;
+  margin: 0;
+  /* width: 800px; */
+  width: 1000px;
+  background-color: black;
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: auto;
+  border-radius: 30px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,.5);}
+  
+  article0{
+    width: auto;
+    postion: center;
+    margin-left: 0, auto;
+    margin-right: 0, auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: auto;
+    background: #e8803e;
+    padding: 0px; 
+    padding-bottom: 10px;
+    margin: 10px;
+    margin-top: -80px;
+  }
+  
+  article1
+  {
+  /*  menu section description  */
+    border: gray;
+    background: #F5F5F5;
+    margin: 10px, auto;
+    padding: 5px;
+    width: 100%;
+    postion: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: auto;
+    text-align: center;
+  }
+  
+  
+  
+  footer{
+    
+    background: black;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    height: 100px;
+    margin-top: 40px;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    text-align: center;
+      margin-bottom: -10px;
+   
+    
+  }
+  
+  .footer-wrapper { width: 100%;}
+  
+  .footer-wrapper > a > img{ 
+    height: 60%;
+    width: 60%; 
+  text-decoration: none;
+  }
+  .footer-wrapper > a > img:hover{cursor:pointer;}
+  
+  
+  /*-------------GRIDS-------------  */
+  
+  
+  .grid-container, .grid-flex{
+    display: grid;
+   grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1px;
+  }
+  
+  .grid-container > div {
+    border-radius: 5px;
+    border: solid #F5F5F5;
+    margin: 2%;
+    background-color: #F5F5F5;
+    text-align: left;
+    padding: 5%;
+    font-size: 100%;
+  
+  }
+  
+  .grid-container > div:hover {
+  cursor: pointer;}
+  
+  @media (min-width: 900px) {
+  #grid-flex{
+    grid-template-columns: repeat(2, 1fr);
+    width: 600px;
+    display: flex;
+  
+    } }
+  
+  
+  
+  
+   img {  
+    height: auto;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+   
+     
+  }
+  
+  
+  /*-------------Screen Responsiveness-------------  */
+  
+  @media (max-width: 1250px) {
+  body {
+    padding: 30px;
+    }
+    
+  }
+  
+  
+  
+    
+  
+  @media (max-width: 900px) {
+    h1{
+      margin: 0px;
+      padding: 6px;
+       padding-bottom: 20px;
+      line-height: 1;
+    }
+    h2 {
+    line-height: 1;
+      
+    }
+    mark{padding: 8px;}
+    
+      .grid-container, .grid-flex {
+        grid-template-columns: repeat(2, 1fr);}
+    
+    ::-webkit-scrollbar {
+  width: 0px;
+  }
+   
+    /* Handle */
+  ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: transparent;
+  }
+  }
+  
+  @media (max-width: 550px) {
+  
+    section{
+      
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+      background: transparent;
+      box-shadow: none;
+    }
+    
+    article0{
+      margin: 0px;
+  /*     border: 4px solid black; */
+      
+    }
+    
+    body{ padding: 5px;
+    padding-top: 0px; background: black;}
+    
+    .grid-container {
+   grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1px;}
+  
+  .nav{width: 100vw;}
+      
+  .nav li:hover {
+   background-color: black;
+   color: white;}
+    
+   .nav a:hover {
+    color: white;}
+  
+  
+    article{overflow: hidden;}
+  }
+  
+  
+  
+  @media (max-width: 730px) {
+    iframe {
+    width: auto;
+    height: auto;
+    }
+    
+    
+    
+    .nav {
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    }
+    
+   .nav > ul > li >a{ 
+    color: white;
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
+    line-height: 0.2;}
+    }article0{ background: black;
+  }
+
+  /*Scroll Design*/
+::-webkit-scrollbar {
+	z-index: 100;
+      width: 5px;
+} /* this targets the default scrollbar (compulsory) */
+::-webkit-scrollbar-track {
+      background-color: #452732 ;
+} /* the new scrollbar will have a flat appearance with the set background color */
+ 
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2); 
+} /* this will style the thumb, ignoring the track */
+ 
+::-webkit-scrollbar-button {
+      background-color: #000;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+ 
+::-webkit-scrollbar-corner {
+      background-color: #000;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+
+/* Style CSS */
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+input{
+  outline-color: #C98474;
+}
+
+.navbar {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: #A7D2CB;
+    border-radius: 0px;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.btnStyle{
+	background-color: #C98474;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 18px;
+	color: #fff;
+	padding: 7px 10px;
+	letter-spacing: .1em;
+	border-radius: 3px;
+	z-index: 1;
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
+.btnStyle:hover{
+	background-color: #874C62;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, .16), 0px 6px 10px rgba(0, 0, 0, .23);
+	transform: scale(1.05, 1.05);
+}
+
+.btnStyle2{
+	background-color: #874C62;
+}
+
+.btnStyle2:hover{
+	background-color: #C98474;
+}
+
+.btnStyle3{
+	background-color: #A7D2CB;
+}
+
+.btnStyle3:hover{
+	background-color: #F2D388;
+}
+
+.toggleCart{
+	position: relative;
+}
+
+.fa-circle {
+    font-size: 21px !important;
+    color: #C98474 ;
+}
+
+.num {
+    font-size: 12px;
+    padding: 3px 6px;
+    color: #fff;
+}
+
+.num, .fa-circle {
+    position: absolute;
+    right: -9px;
+    top: -9px;
+}
+
+.cart{
+	width: 200px;
+	position: fixed;
+	top: 60px;
+	bottom: 0px;
+	right: -300px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	z-index: 1;
+	background-color: #874C62;
+	padding: 30px;
+	box-shadow: 2px 0 20px 5px rgba(0, 0, 0, 0.24);
+
+	transition: all 0.25s ease-in-out;
+}
+
+.cart h2{
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#cartToggle{ 
+	display: none;
+}
+
+/*where the magic happens*/
+#cartToggle:checked ~ div.body-content > .cart{
+	right: 0px;
+}
+
+#cartToggle:checked ~ div.body-content{
+	right: 100px;
+}
+
+#cartToggle:checked ~ div.body-content > .cart > a.finishOrder{
+	right: 5px;
+}
+
+.body-content{
+	position: relative;
+	right: 0px;
+	width: 80%;
+	margin: 0px auto;
+	display: flex;
+	justify-content: space-around;
+
+	transition: all .2s ease-in-out;
+}
+
+/* orders */
+
+.recipe-menu{
+	margin-top: 100px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.recipe{
+	background-image: url('http://mariecatribs.com/assets/styles/images/drawn-frame-big.png');
+	background-size: 100% 100%;
+	padding: 10px;
+  margin-bottom: 40px;
+	width: 300px;
+	position: relative;
+}
+
+.recipe img{
+	width: 100%;
+	height: 80%;
+}
+
+.name{
+    font-size: 23px;
+    text-align: center;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 22px;
+    padding: 0px 15px;
+}
+
+.recipe:hover > .addToCart{
+	opacity: 1;
+}
+
+.addToCart {
+	opacity: 0;
+    position: absolute;
+    top: 70%;
+    left: 28%;
+    transition: all .2s ease-in-out;
+}
+
+.checkOrder{
+	padding: 50px;
+}
+
+.checkOrder {
+    padding: 29px 50px !important;
+}
+
+.listHeading {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.listOfIngredients{
+	list-style: none;
+	margin-bottom: 15px;
+}
+
+.listOfIngredients input{
+	margin: 0px 5px;
+}
+
+.addIngredientWrap{
+	display: flex;
+	margin: 5px 0;
+}
+
+.addIngredientWrap input{
+	width: 60%;
+}
+
+.addIngredientWrap a{
+	padding: 2px 6px;
+	margin: 0 5px;
+	font-size: 15px;
+}
+
+.cancelInput{
+	background-color: #B33232;
+}
+
+.orderName {
+    padding: 13px 0px 8px 0px;
+}
+
+.orderPrice{
+	float: right;
+}
+
+hr {
+    margin: 25px 0 5px 0;
+}
+
+.delBtn {
+    float: right;
+    color: #F2D388;
+    cursor: pointer;
+}
+
+.totalDialog{
+	display: inline-block;
+	float: right;
+}
+
+.cart > h2 > span{
+	margin-left: 15px
+}
+
+.finishOrder {
+    width: 200px;
+    position: fixed;
+    bottom: 0;
+    right: -265px;
+    z-index: 2;
+    padding: 6px 28px;
+    border-radius: 0;
+    text-align: center;
+}
+
+#finishOrderDialog{
+	padding: 30px;
+	display: flex;
+	justify-content: space-around;
+}
+
+#finalOrderList{
+	width: 40%;
+}
+
+#finalOrderList h3{
+	text-align: center;
+}
+
+#finalOrderList ol{
+	margin: 10px 15px;
+}
+
+#buyerInfo {
+    width: 60%;
+    margin: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#buyerInfo input {
+    margin: 5px 0;
+    padding: 3px;
+    width: 90%;
+}
+
+#buyerInfo .order{
+    display: block;
+    width: 50%;
+    margin-top: 10px;
+    text-align:center;
+}
+
+#buyerInfo input::-webkit-input-placeholder {
+   text-align: center;
+}
+
+#thanksMessage{
+	padding: 20px;
+}
+
+/* Dialog Style */
+.ui-dialog {
+    z-index: 2;
+  	box-shadow: 2px 0 20px 5px rgba(0, 0, 0, 0.24);
+  background-color: #fff;
+  padding: 30px;
+}
+
+.ui-draggable-handle {
+    position: absolute;
+    background-color: #A7D2CB;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 999;
+}
+
+.ui-button {
+    background-color: #874C62;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 5px;
+    float: right;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.ui-button:hover{
+  background-color: #C98474;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, .16), 0px 6px 10px rgba(0, 0, 0, .23);
+	transform: scale(1.05, 1.05);
+}

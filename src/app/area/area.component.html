@@ -1,0 +1,33 @@
+
+
+
+
+
+<section id="gallery" class="gallery section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2>area</h2>
+        <p>Check <span>Our Areas</span></p>
+      </div>
+
+      <div class="gallery-slider swiper">
+        <div class="swiper-wrapper align-items-center">
+           
+
+           
+          <div class="swiper-slide" *ngFor="let ar of areas"><a class="glightbox" data-gallery="images-gallery" href="'data:image/jpg;base64,'+ar.areapic"><img [src]="'data:image/jpg;base64,'+ar.areapic" class="img-fluid" alt="{{ar.name}}">
+            {{ar.name}}
+        </a></div>
+       
+      
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+

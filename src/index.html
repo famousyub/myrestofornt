@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Restoclient</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="./assets/img/favicon.png" rel="icon">
+  <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="./assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- ng serve --proxy-config proxy-conf.json-->
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideDown("slow");
+  });
+});
+</script>
+
+  <!-- Template Main CSS File -->
+  <link href="./assets/css/main.css" rel="stylesheet">
+</head>
+<body class="mat-typography">
+  <app-root></app-root>
+
+
+
+
+
+
+
+  <script>
+    $(document).ready(function() {
+  
+
+	$( "a" ).click(function( event ) {
+  		event.preventDefault();
+	});
+
+	var numOfOrders = 0;
+	$(".num").text(numOfOrders);
+
+	// hide dialogs on start
+	$("#thanksMessage, #checkOrderHamburger, #checkOrderMacaroni, #checkOrderPizza, #checkOrderSalad, #checkOrderSpaghetti, #checkOrderRisotto, #finishOrderDialog").hide();
+
+	// open dialog on click
+	$("#addToCartHamburger").on("click", function () {
+		$("#checkOrderHamburger").dialog({
+				hide: "blind",
+            	show : "blind",
+            	width: "400px",
+              closeText: "X"});
+	})
+
+	$("#addToCartMacaroni").on("click", function () {
+		$("#checkOrderMacaroni").dialog({
+				hide: "blind",
+            	show : "blind",
+            	width: "400px",
+              closeText: "X"});
+	})
+
+	$("#addToCartPizza").on("click", function () {
+		$("#checkOrderPizza").dialog({
+				hide: "blind",
+            	show : "blind",
+            	width: "400px",
+              closeText: "X"});
+	})
+
+	$("#addToCartSalad").on("click", function () {
+		$("#checkOrderSalad").dialog({
+				hide: "blind",
+            	show : "blind",
+            	width: "400px",
+              closeText: "X"});
+	})
+
+	$("#addToCartSpaghetti").on("click", function () {
+		$("#checkOrderSpaghetti").dialog({
+				hide: "blind",
+            	show : "blind",
+            	width: "400px",
+              closeText: "X"});
+	})
+
+	$("#addToCartRisotto").on("click", function () {
+		$("#checkOrderRisotto").dialog({
+				hide: "blind",
+            	show : "blind",
+            	width: "400px",
+              closeText: "X"});
+	})
+
+	// increase/decrease the price of order if an item is added/removed
+	function checkboxChange(x) {
+		var priceDialog = 0;
+		$("#recipe"+x).children("li").children("input").each(function () {
+			if($(this).is(":checked")){
+				priceDialog+=3;
+			}
+				$("#totalDialog"+x+">span").text(priceDialog);
+			$(this).change(function () {
+				if ($(this).is(":checked")) {
+					priceDialog += 3;
+					console.log(priceDialog);
+					$("#totalDialog"+x+">span").text(priceDialog);
+				}else{
+					priceDialog -= 3;
+					$("#totalDialog"+x+">span").text(priceDialog);
+				}
+			})
+		});
+	}
+
+	$('#recipe1').children('li').click(checkboxChange(1));
+	$('#recipe2').children('li').click(checkboxChange(2));
+	$('#recipe3').children('li').click(checkboxChange(3));
+	$('#recipe3').children('li').click(checkboxChange(4));
+	$('#recipe3').children('li').click(checkboxChange(5));
+	$('#recipe3').children('li').click(checkboxChange(6));
+
+	$(".addIngredient").on("click", function () {
+		// Creates input field and two buttons for adding an ingrediant that's not on the list
+		var inputIng = '<input type="text" id="newIngredient">';
+		var confirmInput = '<a class="btnStyle3 btnStyle confirmInput">&#10004;</a>';
+		var cancelInput = '<a class="btnStyle3 btnStyle cancelInput">&#10008;</a>';
+		var inputWrap = '<div class="addIngredientWrap">' + inputIng + confirmInput + cancelInput + '</div>'
+		$(this).parent().children("ul").after(inputWrap);
+    $("#newIngredient").focus();
+    $("#newIngredient").attr("placeholder", "separate ingredients with a comma");
+
+		// Confirm button adds the new ingrediant to the list of ingrediants
+		$(".addIngredientWrap > .confirmInput").on("click", function () {
+			if ($("#newIngredient").val() != "") {
+        //split takes the value of the input and splits it into separate array elements after every comma
+				var newIngredient = ($(".addIngredientWrap input").val()).split(",");
+				var newCheckbox = '<input type="checkbox" checked>';
+        
+        for (var i = 0; i < newIngredient.length; i++){
+         $(this).parent().siblings("ul").append("<li>" + newCheckbox + newIngredient[i] + "  (+3$)</li>");
+        }
+				
+
+				$('#recipe1').children('li').click(checkboxChange(1));
+				$('#recipe2').children('li').click(checkboxChange(2));
+				$('#recipe3').children('li').click(checkboxChange(3));
+				$('#recipe3').children('li').click(checkboxChange(4));
+				$('#recipe3').children('li').click(checkboxChange(5));
+				$('#recipe3').children('li').click(checkboxChange(6));
+
+				$(this).parent().remove();
+			}else{
+				$("#newIngredient").attr("placeholder", "Please add ingrediant");
+			}
+		});
+		// Remove button hides the input
+		$(".addIngredientWrap > .cancelInput").on("click", function () {
+			$(this).parent().remove();
+		})
+	})// add ingredient button
+
+	$(".listOver").on("click", function () {
+		var orderName = '<h3 class="orderName"><span>' + $(this).parent().siblings(".ui-dialog-titlebar").children("span").text() + '</span><a class="delBtn">&#10008;</a>' +'</h3>';
+		var orderIngredients = '<ul class="orderIngredients"></ul>';
+		var orderPrice = '<h3 class="orderPrice"><span>' + $(this).parent().children(".totalDialog").children("span").text() + '</span>$<h3>'
+		var horisontalLine = '<hr>';
+		$(".cart").children("#listOfOrders").append("<li>" + orderName + orderIngredients + orderPrice + horisontalLine + "</li>");
+
+		$(this).parent().children("ul").children().children("input:checked").each(function () {
+			var selectedIngredient = $(this).parent().text();
+			$(".orderIngredients").last().append("<li>" + selectedIngredient + "</li>");
+		})
+
+		// opens the cart side menu
+		if ($('#cartToggle').prop('checked')) {
+			$("#cartToggle").prop("checked", true);
+		}else{
+			$("#cartToggle").prop("checked", true);
+		}
+
+		$(this).parent(".ui-dialog-content").dialog("close");
+
+		numOfOrders = $("#listOfOrders").children().length;
+		$(".num").text(numOfOrders);
+
+		// display total price in cart orders
+		var totalOrderPrice = 0;
+		$("#listOfOrders").children("li").children(".orderPrice").children("span").each(function () {
+			var price = parseFloat($(this).text());
+			totalOrderPrice += price;
+			$(".cart > h3 > span").text(totalOrderPrice + "$");
+		});
+
+		// remove order from cart
+		$(".delBtn").on("click", function () {
+			var removePrice = $(this).parent().parent().children(".orderPrice").children("span").text();
+			totalOrderPrice -= removePrice;
+			$(".cart > h3 > span").text(totalOrderPrice + "$");
+
+			$(this).parents("li").remove();
+			numOfOrders = $("#listOfOrders").children().length;
+			$(".num").text(numOfOrders);
+		})
+	}); // List over (done button)
+
+	$(".finishOrder").on("click", function () {
+     $("#finalOrderList > ol").children().remove();
+		$(".orderName").children("span").each(function(){
+			var finalOrder = '<li>' + $(this).text() + '</li>';
+			$("#finalOrderList > ol").append(finalOrder);
+		})
+
+		$("#finishOrderDialog").dialog({
+			hide: "blind",
+	    	show : "blind",
+	    	width: "500px",
+        closeText: "X"
+	    });
+	})
+
+	$(".order").on("click", function () {
+		var name = $("#buyerName").val();
+		var number = $("#buyerNumber").val();
+		var address = $("#buyerAddress").val();
+
+		if (name != "" && number != "" && address != "") {
+			$("#finishOrderDialog").dialog("close");
+			$("#buyerInfo").children("p").remove();
+			$("#thanksMessage").dialog({
+				hide: "blind",
+		    	show : "blind",
+		    	width: "400px"
+		    });
+		    setTimeout(function(){
+		    	$("#thanksMessage").dialog("close");
+		    }, 3000);
+		}else{
+			$("#buyerInfo").append('<p>Fill up all the inputs</p>');
+		}
+	})
+
+})
+  </script>
+
+
+  <!-- Vendor JS Files -->
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/aos/aos.js"></script>
+  <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
+
+
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+
+
+
+
+
+
+<script>
+	// Get current position successfully
+function success(position) {
+  var map, marker,
+      latitude = position.coords.latitude,
+      longitude = position.coords.longitude;
+  
+  // Instance map using leaflet
+  map = L.map('map').setView([latitude, longitude], 13);
+  
+  // Tile layer using key api at cloudmade.com
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    key: '760506895e284217a7442ce2efe97797',
+    styleId: 103288,
+    maxZoom: 16
+  }).addTo(map);
+
+  // Marker using leaflet
+  marker = L.marker([latitude, longitude]).addTo(map);
+
+  // Popup in leaflet
+  marker.bindPopup('<p>Your location</p>').openPopup();
+}
+
+// Get current position fail
+function error() {
+  alert('Get current position fail. Please access codepen to get geolocation.');
+}
+
+// Init load document
+var show = document.getElementById('show');
+
+show.addEventListener('click', function(e) {
+  e.preventDefault();
+  if (!navigator.geolocation) {
+    console.log("Browser doesn't support geolocation");
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+}, false);
+</script>
+
+</body>
+</html>

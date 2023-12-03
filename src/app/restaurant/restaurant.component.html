@@ -1,0 +1,129 @@
+<!-- Header -->
+<div class="grid-container">
+
+    <!-- Menu -->
+    <div class="flex-item-menu">
+  
+      <!-- Sides -->
+      <div class="container">
+        <div class="menu">
+          <h2 class="menu-group-heading">
+            Sides
+          </h2>
+
+ 
+
+<ng-container *ngIf="msresto">
+
+    <table mat-table [dataSource]="msresto.tables" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="idtables">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="menuId">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.tablename}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="menutable">
+            <th mat-header-cell *matHeaderCellDef> tablemenu </th>
+            <td mat-cell *matCellDef="let element">   <a 
+                [routerLink]="['/restaurants-details-menu', element.id, restId,compid]">
+                {{element.id}} view menu table {{element.tablenumber}}
+              </a> </td>
+          </ng-container>
+
+          <ng-container matColumnDef="menushopp">
+            <th mat-header-cell *matHeaderCellDef> menushopp </th>
+            <td mat-cell *matCellDef="let element">   <a 
+                [routerLink]="['/menushopp', element.id, restId,compid]">
+                {{element.idtables}} view menu table
+              </a> </td>
+          </ng-container>
+
+          <ng-container matColumnDef="yummymenu">
+            <th mat-header-cell *matHeaderCellDef> yummy </th>
+            <td mat-cell *matCellDef="let element">   <a 
+                [routerLink]="['/yummy', element.id, restId,compid]">
+                {{element.idtables}} view yummy menu table
+              </a> </td>
+          </ng-container>
+      
+
+          <ng-container matColumnDef="qrmenu">
+            <th mat-header-cell *matHeaderCellDef> menu yummy </th>
+            <td mat-cell *matCellDef="let element">   <a 
+                [routerLink]="['/yummy', element.id, restId,compid]">
+                {{element.idtables}} scan qr 
+                
+                <qrcode [qrdata]="'http://195.88.87.32:8080/api/customer/v1/getqrcode?url=http://195.88.87.32/menushopp/{element.id}/{restId}/{compid}'" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+                <!-- <iframe id="myIframe" src="http://localhost:8080/api/customer/v1/getqrcode?url=http://localhost:4200/yummy/{element.id}/{restId}/{compid}"></iframe> -->
+              </a> 
+              <!-- <iframe src="https://qrys.ch/wp-content/uploads/2021/11/qr.frameable.inline.html" frameborder="0" scrolling="no" style="overflow: hidden;" width="100%" height="400px"></iframe> -->
+
+            </td>
+            
+          </ng-container>
+       
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+</ng-container>
+        
+          
+          
+  
+          <div class="menu-group"  *ngIf="restaurant">
+            
+            <div class="menu-item"  *ngFor="let rec   of restaurant.recipes">
+              <img src="{{rec.imagePath}}" class="menu-item-image">
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">{{rec.name}}</span>
+                  <span class="menu-item-price">{{rec.price}} .dt</span>
+
+                  <span>{{rec.description}}</span>
+
+                  <span class="badge">
+                   quantity {{rec.qunatitymax}}
+                  </span>
+                  <p>
+                    <span matBadge="{{rec.qunatitymax  -100}}" matBadgeSize="large">quantity</span>
+                </p>
+                 
+              
+                
+                  <span>
+                     
+                      
+                      <img src="{{rec.imagePath}}"   height="50"  width="50"   />
+                  </span>
+
+                 
+
+                 
+          
+
+
+                  
+                </h3>
+              </div>
+            </div>
+  
+  
+          </div>
+
+         
+        </div>
+      </div>
+    </div>
+  </div>

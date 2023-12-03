@@ -1,0 +1,112 @@
+
+<!-- Teaching example from http://www.mycookroom.ru/mywork/Leaff/Leaff-v1.4/Site/index-4.html -->
+<section id="popular" class="module">
+    <div class="container">
+      
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="module-header wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                    <h2 class="module-title">Popular Dishes</h2>
+                    <h3 class="module-subtitle">Our most popular menu</h3>
+                </div>
+            </div>
+        </div><!-- .row -->
+
+        <div class="row">
+
+            <div class="col-sm-6"  *ngFor="let res of restaurants">
+
+                <div class="menu" >
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <mat-card class="example-card">
+                                <mat-card-title-group>
+                                  <mat-card-title>
+                                    <h4 class="menu-title"> {{res.resto.id}} {{res.resto.restoname}}</h4>
+                                  </mat-card-title>
+                                  <mat-card-subtitle>
+                                    <div class="col-sm-4 menu-price-detail">
+                                        <h4 class="menu-price">{{res.resto.phonenumber}}</h4>
+                                        <h5>{{res.resto.slug}}</h5>
+                                    </div>
+                                  </mat-card-subtitle>
+                                  <img mat-card-sm-image src="{{res.resto.photoUrl}}" height="80" width="300">
+                                </mat-card-title-group>
+                                <mat-card-content>
+                                    <div class="menu-detail">{{res.resto.address}}</div>
+                                    <img mat-card-sm-image src="{{res.resto.photoUrl}}" height="180" width="500">
+                                </mat-card-content>
+                              </mat-card>
+                              
+                          
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="col lg lg-12" *ngFor="let rec of res.recipes" >
+                      
+                           
+                            
+                            
+                         
+
+                                <mat-card class="example-card">
+                                    <mat-card-title-group>
+                                      <mat-card-title>
+                                        <span>{{rec.name}}</span>
+                                      </mat-card-title>
+                                      <mat-card-subtitle>
+                                        <span class="fx">recipe Id {{rec.id}}</span>
+                                      </mat-card-subtitle>
+                                      <img mat-card-md-image src="{{rec.imagePath}}" >
+                                    </mat-card-title-group>
+                                    <mat-card-content>
+                                        <span>{{rec.description}}</span>
+
+                                        <h1>price</h1>
+                                        <span>{{rec.price}}</span>
+                                        <bdo>
+                                            dt
+                                        </bdo>
+    
+                                    </mat-card-content>
+                                  </mat-card>
+                               
+                                
+                                
+                           
+                    </div>
+
+                    <a 
+                [routerLink]="['/restaurants-details', res.resto.id,id]">
+                {{ res.resto.id }} view resto
+              </a>
+
+                       
+                </div>
+
+             
+               
+
+            </div><!-- .col-sm-6 -->
+
+
+        
+
+        </div><!-- .row -->
+
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 long-up text-center">
+                <a href="menu-simple.html" class="btn btn-custom-1">View Menu</a>
+            </div>
+        </div><!-- .row -->
+
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="devider">
+                </div>
+            </div>
+        </div><!-- .row -->
+
+    </div><!-- .container -->
+</section>
